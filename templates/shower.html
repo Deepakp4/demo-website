@@ -1,0 +1,19 @@
+
+{% include 'theader.html' %}
+
+<div class="container">
+    <div class="pipes-content">
+        <h1>SHOWER</h1>
+        {% for i in k %}
+        <div class="card" style="width: 18rem;">
+          <img style="width:200px" class="card-img-top" src="/{{i.image}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{i.heading}}</h5>
+            <p class="card-text">{{i.description}}</p>
+            <a href="#" class="btn btn-primary">add to card</a>
+          </div>
+        </div> 
+        {% endfor %} 
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+{% include 'theader.html' %}
+<h1 style="text-align:center;margin-top:80px;"> CART ITEMS</h1>
+<div class="container">
+    <div class="pipes-content">
+    
+       {% for i in cp %}
+       <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">name</th>
+            <th scope="col">image</th>
+            <th scope="col">price</th>
+            <th scope="col">quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{i.heading}}</th>
+            <td><img style="width:80px;height:80px" class="card-img-top" src="/{{i.image}}"</td>
+            <td>{{i.discription}}</td>
+            <td>{{qty}}</td>
+          </tr>
+        {% endfor %}       
+        </table>
+        
+       
+        
+    </div>
+</div>

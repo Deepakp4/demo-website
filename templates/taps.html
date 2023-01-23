@@ -1,0 +1,49 @@
+
+{% include 'theader.html' %}
+
+<div class="container">
+    <div class="pipes-content">
+        <h1>TAPS</h1>
+        {% for i in k %}
+        <div class="card" style="width: 18rem;">
+          <img style="width:200px" class="card-img-top" src="/{{i.image}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{i.heading}}</h5>
+            <p class="card-text">{{i.description}}</p>
+            <form action="{% url 'taps' %}" method="POST">
+            <input type="number" value="1" class="form-control" name="qty">
+            <input type="hidden" class="product-id" name="pid" value={{i.id}}>
+            
+              {% csrf_token %}
+            <button id="cart" class="btn btn-primary addtocart" >add to card</button>
+            </form>
+          </div>
+        </div> 
+        {% endfor %} 
+    </div>
+</div>
+   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+           integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+           crossorigin="anonymous"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        
+		<script>
+		$('#cart').on('click',function(){
+      var _vm=$(this);
+			var _qty=$("#productqt").val();
+			var _productId=$(".product-id").val();
+      
+			$.ajax({
+        url:'/taps/addtocart',
+        data:{
+          'id':_productId,
+          'qty':_qty,
+        },
+        dataType:'json',
+        beforeSend:function(){
+          _vm.attr('disabled',true);
+        }
+      })
+		});
+		</script>-->
+
